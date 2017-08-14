@@ -26,7 +26,7 @@ public class AnimationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_animation);
         ButterKnife.bind(this);
 
-        animateImage(); // 动画播放图片
+        mIvImageView.setImageDrawable(ContextCompat.getDrawable(getApplication(), R.drawable.avd_anim));
 
         // 重绘动画
         mBDraw.setOnClickListener(new View.OnClickListener() {
@@ -41,7 +41,7 @@ public class AnimationActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             // 获取动画效果
             AnimatedVectorDrawable mAnimatedVectorDrawable = (AnimatedVectorDrawable)
-                    ContextCompat.getDrawable(getApplication(), R.drawable.v_heard_animation);
+                    ContextCompat.getDrawable(getApplication(), R.drawable.avd_anim);
             mIvImageView.setImageDrawable(mAnimatedVectorDrawable);
             if (mAnimatedVectorDrawable != null) {
                 mAnimatedVectorDrawable.start();
